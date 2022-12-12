@@ -6,9 +6,9 @@
 	<title>Demystify Magic</title>
 
   <!-- Font elements: -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bentham&family=Fjalla+One&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
 
 
 	<link href="styles/main.css" rel="stylesheet">
@@ -26,15 +26,27 @@
 		<div id="intro">
     	<h2>Turn rules and Sequencing</h2>
     	<p>Magic: the Gathering turn rules breakdown for two player and commander formats</p>
+
+				<ol>
+					<li><strong><a href='#beginning'>Beginning Phase</a></strong></li>
+					<li><strong><a href='#main1'>Main Phase 1</a></strong></li>
+					<li><strong><a href='#combat'>Combat Phase</a></strong></li>
+					<li><strong><a href='#main2'>Main Phase 2</a></strong></li>
+					<li><strong><a href='#end'>Ending Phase</a></strong></li>
+				</ol>
+
 		</div>
 
 		<!-- anatomy image origin here -->
 		<div id="anatomyImg">
-				<img id="baseImg" src="images/anatomy_TEST.PNG" alt="an example of a Magic: The Gathering battlefield">
+				<img id="baseImg" src="images/original.PNG" alt="an example of a Magic: The Gathering battlefield">
 		</div>
 
+
+<!--Here is where the phases start -->
 <div id="sections">
 
+<!-- BEGGINNING ------------------------------------------------------->
   <section id="beginning">
     <div class="begDiv">
       <h2>Beginning Phase</h2>
@@ -43,12 +55,12 @@
     <div class="begDiv" id="untap">
 			<h3>Untap Step</h3>
 
-      <p>This is the first thing you do in a turn, and all of these are turn-based actions that don't use the stack</p>
+      <p>This is the very first thing you do in a turn!</p>
 			<ul>
-				<li><strong>First:</strong> If there is phasing, the active player's permanents phase in or out simultaneously</li>
-				<li><strong>Second:</strong> If there is a day/night cycle, the day or night designation is lost and the other is gained.
+				<li><strong>First:</strong> If there is phasing, the active player's permanents phase in or out simultaneously<sup class="hover-t">(t)<span class="tooltip-text">Turn-Based Action</span></sup></li>
+				<li><strong>Second:</strong> If there is a day/night cycle, the day or night designation is lost and the other is gained<sup class="hover-t">(t)<span class="tooltip-text">Turn-Based Action</span></sup></li>
 				<li><strong>Third:</strong> Any summoning sickness is lost</li>
-				<li><strong>Fourth:</strong> The active player's permanents are untapped simultaneously</li>
+				<li><strong>Fourth:</strong> The active player's permanents are untapped simultaneously<sup class="hover-t">(t)<span class="tooltip-text">Turn-Based Action</span></sup></li>
 			</ul>
     </div>
 
@@ -57,7 +69,7 @@
 
       <p>The upkeep step doesnt have any required actions, its more like a window for you and opponents to take actions.</p>
 			<ul>
-				<li><strong>First:</strong> Abilities that are triggered in the untap or the upkeep step are put on the stack</li>
+				<li><strong>First:</strong> Abilities that are triggered in the untap or the upkeep step happen<sup class="hover-t">(s)<span class="tooltip-text">Enter the Stack</span></sup></li>
 				<li><strong>Second:</strong> The active player gets priority</li>
 			</ul>
     </div>
@@ -65,34 +77,38 @@
     <div class="begDiv" id="draw">
 			<h3>Draw Step</h3>
 
-			<p>The active player draws a card from the top of their deck as a turn-based action.</p>
+			<p>The active player draws a card from the top of their deck.<sup class="hover-t">(t)<span class="tooltip-text">Turn-Based Action</span></sup></p>
 			<ul>
-				<li><strong>First:</strong> Abilities that are triggered from drawing that card are put on the stack</li>
-				<li><strong>Second:</strong> The active player gets priority</li>
+				<li><strong>First:</strong> Abilities that are triggered from drawing that card happen<sup class="hover-t">(s)<span class="tooltip-text">Enter the Stack</span></sup></li>
+				<li><strong>Second:</strong> The active player gets priority<sup class="hover-t">(d)<span class="tooltip-text">Declare Moving Phases</span></sup></li>
 			</ul>
 
     </div>
 
 		<div class="declare" id="dm1">
-      <h3>Declare moving to Precombat Main Phase</h3>
+      <h3>Declare moving to first Main Phase</h3>
 			<p>This is essentially passing priority at the end of the draw step</p>
 			<p>This isn't necessarily a rule, but it's a courtesy to mention whenever you are moving to a new phase to give the opponent a chance to respond.</p>
     </div>
   </section>
 
+
+<!-- MAIN1 ------------------------------------------------------->
   <section id="main1">
 
-    <div id="divMain1" class="mainPhase">
+    <div id="divMain1Title" class="mainPhase">
       <h2>Precombat Main Phase</h2>
+		</div>
 
+		<div id="divMain1" class="mainPhase">
 			<ul>
-				<li><strong>First:</strong> The active player puts a lore counter on each Saga Enchantment they control. This is a turn based action and does not use the stack</li>
-				<li><strong>Second:</strong> Abilities that trigger "At the beginning of the next main phase" or "precombat phase" are put on the stack</li>
-				<li><strong>Third:</strong> Once that stack is empty, the active player gets priority to play any card type</li>
+				<li><strong>First:</strong> The active player puts a lore counter on each Saga Enchantment they control<sup class="hover-t">(t)<span class="tooltip-text">Turn-Based Action</span></sup></li>
+				<li><strong>Second:</strong> Abilities that trigger "At the beginning of the next main phase" or "precombat phase" happen<sup class="hover-t">(s)<span class="tooltip-text">Enter the Stack</span></sup></li>
+				<li><strong>Third:</strong> Once everything has happened, the active player gets priority to play any card type</li>
 			</ul>
 
-			<p>At this point, in the main phase, the active player may play their one land per turn, but this is not a step and does not use the stack. Spells and lands can be played in any order.</p>
-      <p>The main phase has no steps, and ends once the active player and opponents have passed priority and the stack is empty.</p>
+			<p>At this point, in the main phase, the active player may play their one land per turn, but this is not a step. Spells and lands can be played in any order.</p>
+      <p>The main phase has no steps, and ends once the active player and opponents have finished their actions.</p>
     </div>
 
 		<div class="declare" id="dcombat">
@@ -101,6 +117,7 @@
     </div>
   </section>
 
+<!-- COMBAT ------------------------------------------------------->
   <section id="combat">
 
     <div class="combatDiv">
@@ -111,18 +128,22 @@
       <h3>Beginning of Combat</h3>
 
 			<ul>
-				<li><strong>First:</strong> The opponent becomes the defending player. In a multiplayer game, the active player chooses an opponent as the "defending player"</li>
-				<li><strong>Second:</strong> Abilities that trigger at the beginning of combat" are put on the stack</li>
+				<li><strong>First:</strong> The opponent becomes the defending player. In a multiplayer game, all opponents become a "defending player"</li>
+				<li><strong>Second:</strong> Abilities that trigger at the beginning of combat" happen<sup class="hover-t">(s)<span class="tooltip-text">Enter the Stack</span></sup></li>
 				<li><strong>Third:</strong> The active player then gets priority before moving to the next step</li>
 			</ul>
     </div>
 
     <div class="combatDiv" id="declareAttacks">
 			<h3>Declare Attackers</h3>
-      <p>Here, the active player delcares the creatures to attack. This does not use the stack.</p>
-			<p>An opponent or an opponent's planeswalker must be selected for each creature's attack.</p>
-			<p>The active player gets priority before moving to the next step.</p>
-			<p><em>If no attackers are declared, the Declare Blockers and Combat Damage steps do not happen at all.</em></p>
+
+			<ul>
+				<li><strong>First:</strong> The active player declares which creatures to attack if any<sup class="hover-t">(t)<span class="tooltip-text">Turn-Based Action</span></sup></li>
+				<li><strong>Second:</strong> An opponent or an opponent's planeswalker must be selected for each creature's attack</li>
+				<li><strong>Third:</strong> The active player then gets priority before moving to the next step</li>
+			</ul>
+
+			<p><em>If no attackers are declared, the Declare Blockers and Combat Damage steps do not happen at all</em></p>
     </div>
 
     <div class="combatDiv" id="declareBlocks">
@@ -130,9 +151,9 @@
 			<p>Here, the defending player(s) will declare their blockers.</p>
 
 			<ul>
-				<li><strong>First:</strong> The defending player(s) choose which creatures they control will block.</li>
-				<li><strong>Second:</strong> For each attacking creature that is blocked, the active player chooses the damage assignment order</li>
-				<li><strong>Third:</strong> Abilities that trigger off declaring blockers are put on the stack</li>
+				<li><strong>First:</strong> The defending player(s) choose which creatures they control will block if any<sup class="hover-t">(t)<span class="tooltip-text">Turn-Based Action</span></sup></li>
+				<li><strong>Second:</strong> For each attacking creature that is blocked, the active player chooses the damage assignment order<sup class="hover-t">(t)<span class="tooltip-text">Turn-Based Action</span></sup></li>
+				<li><strong>Third:</strong> Abilities that trigger off declaring blockers happen<sup class="hover-t">(s)<span class="tooltip-text">Enter the Stack</span></sup></li>
 				<li><strong>Fourth:</strong> The active player gets priority</li>
 			</ul>
 
@@ -142,11 +163,9 @@
 			<h3>Combat Damage</h3>
 			<p>If there is any creatures attacking or blocking with first strike or double strike, there is an extra preliminary combat damage step for the first strike damage.</p>
 				<ul>
-					<li><strong>First:</strong> All attacking creatures (excl. first strikers) who have been blocked assign damage to their blockers</li>
-					<li><strong>Second:</strong> All unblocked creatures assign damage to the defending player or planeswalker</li>
-					<li><strong>Third:</strong> All defending creatures assign combat damage to their attackers</li>
+					<li><strong>First:</strong> Each player announces how each attacking or blocking creature they control assignes its combat damage<sup class="hover-t">(t)<span class="tooltip-text">Turn-Based Action</span></sup></li>
 					<li><strong>Fourth:</strong> All damage is dealt simultaneously</li>
-					<li><strong>Fifth:</strong> Abilities that trigger on damage will go on the stack</li>
+					<li><strong>Fifth:</strong> Abilities that trigger on damage will happen<sup class="hover-t">(s)<span class="tooltip-text">Enter the Stack</span></sup></li>
 					<li><strong>Sixth:</strong> Active player gets priority</li>
 				</ul>
     </div>
@@ -154,28 +173,34 @@
 		<div class="combatDiv" id="endCombat">
 			<h3>End of Combat</h3>
 			<ul>
-				<li><strong>First:</strong> Abilities that trigger at the "end of combat" go on the stack</li>
-				<li><strong>Second:</strong> The active player gets priority</li>
+				<li><strong>First:</strong> Abilities that trigger at the "end of combat" will happen<sup class="hover-t">(s)<span class="tooltip-text">Enter the Stack</span></sup></li>
+				<li><strong>Second:</strong> The active player gets priority<sup class="hover-t">(d)<span class="tooltip-text">Declare Moving Phases</span></sup></li>
 				<li><strong>Third:</strong> All creatures are removed from combat</li>
 				<li><strong>Fourth:</strong> Effects that are "until end of combat" end</li>
 			</ul>
 	  </div>
 
 		<div class="declare" id="dm2">
-      <h3>Declare moving to Postcombat Main Phase</h3>
-			<p>This is essentially passing priority at the end of the combat phase and will alert the opponent that creatures are being removed from combat and "end of combat" effects are ending, giving the opponent a chance to respond</p>
+      <h3>Declare moving to next Main Phase</h3>
+			<p>This is essentially passing priority at the end of the combat phase and will alert the opponent that creatures are being removed from combat, giving the opponent a chance to respond</p>
     </div>
 </section>
 
+
+<!-- MAIN2 ------------------------------------------------------->
 <section id="main2">
 
-  <div id="divMain2" class="mainPhase">
+  <div id="divMain2Title" class="mainPhase">
     <h2>Postcombat Main Phase</h2>
+	</div>
 
+	<div id="divMain2" class="mainPhase">
 		<ul>
 			<li><strong>First:</strong> Abilities that trigger "At the beginning of the next main phase" or "postcombat phase" are put on the stack</li>
 			<li><strong>Second:</strong> Once the stack is empty, the active player gets priority to play any card type</li>
 		</ul>
+		<p>Just like the first main phase, the active player may cast spells and play their one land per turn if they haven't yet.</p>
+		<p>The main phase has no steps, and ends once the active player and opponents have finished their actions.</p>
   </div>
 
 	<div class="declare">
@@ -184,32 +209,34 @@
   </div>
 </section>
 
+
+<!-- END ------------------------------------------------------->
 <section id="end">
 
-	<div class="endDiv" id="dend">
-		<h2>Ending Phase</h2>
-	</div>
+		<div class="endDiv" id="dend">
+			<h2>Ending Phase</h2>
+		</div>
 
-  <div class="endDiv" id="effects">
-		<h3>Beginning of End Step</h3>
+	  <div class="endDiv" id="effects">
+			<h3>Beginning of End Step</h3>
 
-		<ul>
-			<li><strong>First:</strong> Abilities that trigger at the beginning of the end step or at the next end step are put on the stack</li>
-			<li><strong>Second:</strong> The active player gets priority</li>
-		</ul>
-  </div>
+			<ul>
+				<li><strong>First:</strong> Abilities that trigger at the beginning of the end step or at the next end step happen<sup class="hover-t">(s)<span class="tooltip-text">Enter the Stack</span></sup></li>
+				<li><strong>Second:</strong> The active player gets priority</li>
+			</ul>
+	  </div>
 
-  <div class="endDiv" id="cleanup">
-		<h3>Cleanup Step</h3>
-    <p>This is the last step that wraps up all the events of the turn before moving to the next player's turn.</p>
+	  <div class="endDiv" id="cleanup">
+			<h3>Cleanup Step</h3>
+	    <p>This is the last step that wraps up all the events of the turn before moving to the next player's turn.</p>
 
-		<ul>
-			<li><strong>First:</strong> If the active player has more cards in hand than their maximum hand size, they must discard cards from their hand until they meet the maximum</li>
-			<li><strong>Second:</strong> All these actions happen simultaneously: all damage marked on permanents is removed and "until end of turn" and "this turn" effects end</li>
-			<li><strong>Third:</strong> No player receives priority during the cleanup step</li>
-		</ul>
-		<p>Now, the next player's turn begins, and the process restarts from the beginning</p>
-  </div>
+			<ul>
+				<li><strong>First:</strong> If the active player has more cards in hand than their maximum hand size, they must discard cards from their hand until they meet the maximum</li>
+				<li><strong>Second:</strong> All these actions happen simultaneously: all damage marked on permanents is removed and "until end of turn" and "this turn" effects end</li>
+				<li><strong>Third:</strong> No player receives priority during the cleanup step</li>
+			</ul>
+			<p>Now, the next player's turn begins, and the process restarts from the beginning!</p>
+	  </div>
 </section>
 </div>
 </div>
@@ -217,24 +244,6 @@
 </article>
 
 <footer>
-<div id="definitions">
-
-<h3>Useful Definitions</h3>
-<ul>
-	<li><strong>The Active Player:</strong> the turn belongs to this player, i.e. it is that persons turn</li>
-	<li><strong>Phase:</strong> A phase is essentially a section of a turn, and there are five phases in a magic turn</li>
-	<li><strong>Step:</strong> A phase has a number of steps (or none at all) that a player must go through as part of the phase</li>
-	<li><strong>Turn-Based Action:</strong> A phase has a number of steps (or none at all) that a player must go through as part of the phase</li>
-	<li><strong>Stack:</strong> The stack is a zone where abilities and spells wait to resolve. In Last-in-first-out (LIFO) style, the most recent spell or ability on the stack resolves first</li>
-	<li><strong>Priotity:</strong> A player may add a spell or activated abilitiy to the stack if that player has priority</li>
-	<li><strong>State-Based Action:</strong> Just before any player gets priority, the game is checked for certain conditions. If either a creature being dealt lethal damage or the legend rule, the action of death/sacrifice will be taken immediately, and another check will be repeated</li>
-	<li><strong>Land per Turn:</strong> A player may play one land per turn on only one of their main phases as their land per turn</li>
-	<li><strong>Attacking Player:</strong> A player who is in the combat phase of their turn is the attacking player</li>
-	<li><strong>Defending Player:</strong> A player becomes the defending player if the attacking player is attacking them or a planeswalker they control</li>
-	<li><strong>Damage Assignment Order:</strong> Damage from an attacking creature is assigned to a blocking creature in an order determined by the defending player.</li>
-
-</ul>
-</div>
 
 <h3>Acknowledgements</h3>
 <p>This page was created by Olivia Giraldo. Information was sourced from <a href="https://magic.wizards.com/en/rules">the Comprehensive Rules</a>, <a href="https://magic.wizards.com/en/news/feature/dynamics-turn-2006-11-04">an official Dynamics of the Turn guide</a>, and <a href="https://grayduck.mn/files/Magic%20the%20Gathering%20Turn%20Structure.pdf">@CubeApril's Turn Structure PDF</a></p>

@@ -12,11 +12,11 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    /* font-family: 'Bentham', Times New Roman, sans-serif; */
+    font-family: 'Kalam', Times New Roman, sans-serif;
     color: #fff;
     background: #000;
     margin: 0;
-    font-size: 1.25rem;
+    font-size: 1.9rem;
     width: 100%;
     line-height: 2.5rem;
 }
@@ -34,18 +34,18 @@ header {
   height: 15rem;
 }
 h1 {
-  font-family: 'Fjalla One', Impact, serif;
-  font-size: 5rem;
+  font-family: 'IM Fell DW Pica', Impact, serif;
+  font-size: 7rem;
   margin: auto;
+  line-height: 5rem;
 }
 
 h2 {
   font-size: 3rem;
 }
 
-em {
-  font-size: 1.2rem;
-}
+
+
 
 /* left-side text stuff */
 #text {
@@ -59,6 +59,8 @@ em {
       "sections sections";
 }
 
+
+
 /* grid template areas */
 #intro {
   grid-area: intro;
@@ -67,18 +69,44 @@ em {
   padding: 1rem;
   line-height: 2rem;
 }
-#intro h2, p {
-  margin-top: 2rem;
+#intro h2 {
+  line-height: 3rem;
+}
+#intro p {
+  margin: 1.3rem auto 1.3rem auto;
+  text-align: center;
 }
 #anatomyImg {
   grid-area: anatomyImg;
   width: 640px;
 }
 
+/* button stuff */
+#intro ol {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+#intro li {
+  background: #000;
+  margin: 0.3rem;
+  padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+  width: 15rem;
+  border-radius: 10px;
+  font-size: 1.4rem;
+}
+
+
+
 /* anatomy image stuff */
 #anatomyImg img{
   max-width: 40rem;
 }
+
+
+/* -----------section stuff--------- */
 
 #sections {
   grid-area: sections;
@@ -86,19 +114,8 @@ em {
   margin: 0;
   padding: 0;
 }
-
-p, ul {
-  max-width: 58ch;
-}
-
-ul {
-  padding-left: 1rem;
-}
-
-/* -----------section stuff--------- */
-
-section {
-  /* padding: 1.8rem; */
+#sections p {
+  padding-top: 1rem;
 }
 
 .declare, .begDiv, .combatDiv, .mainPhase, .endDiv {
@@ -107,6 +124,7 @@ section {
 
 .declare {
   background: #2B2B2B;
+  margin-bottom: 2rem;
 }
 
 /*------beginning phase------*/
@@ -173,6 +191,18 @@ section {
 
 /* --------end section stuff------- */
 
+/* floating stuff */
+p, ul {
+  max-width: 35ch;
+  line-height: 2.3rem;
+}
+
+ul {
+  padding-left: 1rem;
+}
+li {
+  padding-top: 1rem;
+}
 
 
 /* article stuff */
@@ -180,18 +210,47 @@ article {
   display: flex;
   flex-direction: column;
   margin: 0;
-  background: #574D42;
+  background: #505050;
 }
 
-#definitions {
-  padding: 1rem;
-  margin: auto;
+
+/* tooltip stuff */
+.tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  width: 260px; /*FIX*/
+  background-color: #000;
+  padding: 0.03rem;
+  border-radius: 10px;
+
+  top: -40px;
+  left: -50%;
 }
 
-#definitions p, ul {
-  /*max-width: 60rem;*/
-  /*margin: auto;*/
+.hover-t:hover .tooltip-text {
+  visibility: visible;
 }
+
+.hover-t {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+
+/*border*/
+
+.border {
+  border: 0.3rem solid #fff;
+}
+
+
+/* footer */
+footer {
+  padding: 2rem;
+}
+
 
 
 a:link {
@@ -210,6 +269,87 @@ a:active {
   color: #E89BE6;
 }
 
-@media screen and (max-width: 675px) {
+@media screen and (max-width: 1233px) {
+
+  #text {
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+        "intro"
+        "anatomyImg"
+        "sections";
+  }
+
+  h1 {
+    font-size: 5rem;
+    text-align: center;
+  }
+
+  /* anatomy image stuff */
+  #anatomyImg img{
+    max-width: 35rem;
+  }
+  #anatomyImg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  article {
+    margin: auto;
+  }
+
+}
+
+@media screen and (max-width: 700px) {
+
+  #text {
+    /*max-width: 500px;
+    margin: 0 auto 4rem auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+        "intro"
+        "anatomyImg"
+        "sections"; */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100vw;
+  }
+  #intro {
+    max-width: 500px;
+  }
+
+  h1 {
+    font-size: 5rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+  }
+  p, li {
+    font-size: 1.5rem;
+  }
+
+  /* anatomy image stuff */
+  #anatomyImg img{
+    max-width: 24rem;
+  }
+  #anatomyImg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  article {
+    align-items: center;
+    margin: auto;
+  }
 
 }
