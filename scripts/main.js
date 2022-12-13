@@ -516,9 +516,9 @@ function depthTest(e) {
 
     //delete battlefield
     new ScrollMagic.Scene({
-      offset: 12500
+      triggerElement: '#footer'
     })
-    .setClassToggle('#anatomyImg', 'hide')
+    .setClassToggle('#baseImg', 'hide')
     .addTo(controller);
 
   }
