@@ -491,7 +491,7 @@ function depthTest(e) {
 
     //cleanup --------------------------------------
     var clean = new ScrollMagic.Scene({
-      offset: 11300,
+      offset: 11400,
       duration: 1199
     })
     .setClassToggle('#cleanup', 'border')
