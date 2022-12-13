@@ -61,7 +61,8 @@ h2 {
   position: absolute;
   z-index: 1;
   width: 260px; /*FIX*/
-  background-color: #000;
+  background-color: #A3627F;
+  color: #fff;
   padding: 0.03rem;
   border-radius: 10px;
 
@@ -128,12 +129,15 @@ h2 {
   align-items: center;
 }
 #intro li {
-  background: #000;
+  background: #A3627F;
   margin: 0.3rem;
   padding: 0.1rem 0.5rem 0.1rem 0.5rem;
   width: 15rem;
   border-radius: 10px;
   font-size: 1.4rem;
+}
+#intro a {
+  text-decoration: none;
 }
 
 
@@ -250,6 +254,10 @@ li {
   padding-top: 1rem;
 }
 
+.hide {
+  display: none;
+}
+
 
 
 
@@ -263,6 +271,9 @@ li {
 /* footer */
 footer {
   padding: 2rem;
+  margin: 1rem;
+  background: #A3627F;
+  border-radius: 20px;
 }
 
 
@@ -271,7 +282,7 @@ a:link {
   color: #fff;
 }
 a:visited {
-  color: #4C8C54;
+  color: #000;
 }
 a:focus {
   color: #000;
@@ -280,7 +291,7 @@ a:hover {
   color: #C5DBF1;
 }
 a:active {
-  color: #E89BE6;
+  color: #006875;
 }
 
 
@@ -364,52 +375,3 @@ a:active {
     max-width: 24rem;
   }
 }
-
-/* @media screen and (max-width: 1233px) {
-
-  #text {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100vw;
-  }
-  #intro {
-    max-width: 500px;
-  }
-
-  h1 {
-    font-size: 5rem;
-    text-align: center;
-  }
-
-  h2 {
-    font-size: 2.2rem;
-  }
-  p, li {
-    font-size: 1.5rem;
-  }
-
-
-  #anatomyImg img{
-    max-width: 24rem;
-  }
-  #anatomyImg {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  article {
-    align-items: center;
-    margin: auto;
-  }
-
-  #beginning, #main1, #combat, #main2, #end {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%
-  }
-
-} */

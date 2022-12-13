@@ -6,7 +6,9 @@ var i = false;
 //MEDIA QUERY MEDIA QUERY MEDIA QUERY MEDIA QUERY MEDIA QUERY MEDIA QUERY
 
 let mediaQuery = window.matchMedia('(max-width: 1233px)');
-
+//js media query site used:
+//https://css-tricks.com/working-with-javascript-media-queries/
+//https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList
 
 //INITIALIZE SWITCHING SCROLLMAGIC SCENES------------------------------
 let bigImg = new ScrollMagic.Scene({
@@ -16,7 +18,7 @@ let bigImg = new ScrollMagic.Scene({
 
 
 let smallImg = new ScrollMagic.Scene({
-  offset: 750,
+  offset: 730,
 })
 .setPin('#anatomyImg')
 
@@ -34,22 +36,19 @@ function screenTest(e) {
     controller.removeScene(baseImg);
 
   if (e.matches) {
-    console.log('small screen'); //test for if statement running
-
+      console.log('small screen check'); //test for if statement
       if (i == true) {
           controller.removeScene(bigImg);
       }
-
       controller.addScene(smallImg);
   }
 
   else {
-    console.log('big screen'); //test for if statement running
-
-    if (i == true) {
-        controller.removeScene(smallImg);
-    }
-    controller.addScene(bigImg);
+      console.log('big screen check'); //test for if statement
+      if (i == true) {
+          controller.removeScene(smallImg);
+      }
+      controller.addScene(bigImg);
   }
 
   i = true;
@@ -57,11 +56,6 @@ function screenTest(e) {
 }
 
 mediaQuery.addEventListener('change', screenTest); //this notices when the screen is changed, which will rerun the two mediaquery test functions
-
-//MEDIA QUERY MEDIA QUERY MEDIA QUERY MEDIA QUERY MEDIA QUERY MEDIA QUERY
-
-
-
 
 
 let image = document.getElementById('baseImg');
@@ -89,6 +83,7 @@ let begendImg = "images/begend.PNG";
 let cleanupImg = "images/cleanup.PNG";
 
 
+//First scene to set up controller
 var og = new ScrollMagic.Scene({
   offset: 379,
 })
@@ -99,21 +94,17 @@ var og = new ScrollMagic.Scene({
 
 
 
-//HIGHLIGHTING
-
-//BEGINNING----------------------------------------------------------
-//untap
-
+// for help with .on('start'...) and related formats i used site: https://github.com/janpaepke/ScrollMagic/issues/281
 function depthTest(e) {
 
   if (e.matches) {
 
-    console.log('small screen success'); //test for if statement running
+    console.log('small screen check 2'); //test for if statement running
 
 
     var untap = new ScrollMagic.Scene({
       offset: 800,
-      duration: 900
+      duration: 899
     })
     .setClassToggle('#untap', 'border')
     .addTo(controller);
@@ -139,7 +130,7 @@ function depthTest(e) {
     //upkeep----------------------------------------
     var upkeep = new ScrollMagic.Scene({
       offset: 1700,
-      duration: 600
+      duration: 599
     })
     .setClassToggle('#upkeep', 'border')
     .addTo(controller);
@@ -164,7 +155,7 @@ function depthTest(e) {
     //draw-----------------------------------------
     var draw = new ScrollMagic.Scene({
       offset: 2300,
-      duration: 500
+      duration: 499
     })
     .setClassToggle('#draw', 'border')
     .addTo(controller);
@@ -189,7 +180,7 @@ function depthTest(e) {
     //declare-------------------------------------
     var dm1 = new ScrollMagic.Scene({
       offset: 2800,
-      duration: 500
+      duration: 499
     })
     .setClassToggle('#dm1', 'border')
     .addTo(controller);
@@ -215,7 +206,7 @@ function depthTest(e) {
 
     var main1 = new ScrollMagic.Scene({
       offset: 3400,
-      duration: 1200
+      duration: 1199
     })
     .setClassToggle('#divMain1', 'border')
     .addTo(controller);
@@ -241,7 +232,7 @@ function depthTest(e) {
 
     var dmc = new ScrollMagic.Scene({
       offset: 4600,
-      duration: 400
+      duration: 399
     })
     .setClassToggle('#dcombat', 'border')
     .addTo(controller);
@@ -268,7 +259,7 @@ function depthTest(e) {
     //beg--------------------------------------
     var begc = new ScrollMagic.Scene({
       offset: 5000,
-      duration: 700
+      duration: 699
     })
     .setClassToggle('#begCombat', 'border')
     .addTo(controller);
@@ -294,7 +285,7 @@ function depthTest(e) {
 
     var datk = new ScrollMagic.Scene({
       offset: 5700,
-      duration: 900
+      duration: 899
     })
     .setClassToggle('#declareAttacks', 'border')
     .addTo(controller);
@@ -320,7 +311,7 @@ function depthTest(e) {
 
     var dblk = new ScrollMagic.Scene({
       offset: 6600,
-      duration: 800
+      duration: 799
     })
     .setClassToggle('#declareBlocks', 'border')
     .addTo(controller);
@@ -346,7 +337,7 @@ function depthTest(e) {
 
     var dmg = new ScrollMagic.Scene({
       offset: 7400,
-      duration: 1000
+      duration: 999
     })
     .setClassToggle('#resolveDmg', 'border')
     .addTo(controller);
@@ -372,7 +363,7 @@ function depthTest(e) {
 
     var endc = new ScrollMagic.Scene({
       offset: 8400,
-      duration: 500
+      duration: 499
     })
     .setClassToggle('#endCombat', 'border')
     .addTo(controller);
@@ -398,7 +389,7 @@ function depthTest(e) {
 
     var dm1 = new ScrollMagic.Scene({
       offset: 9000,
-      duration: 400
+      duration: 399
     })
     .setClassToggle('#dm2', 'border')
     .addTo(controller);
@@ -424,7 +415,7 @@ function depthTest(e) {
 
     var main2 = new ScrollMagic.Scene({
       offset: 9400,
-      duration: 1100
+      duration: 1099
     })
     .setClassToggle('#divMain2', 'border')
     .addTo(controller);
@@ -449,7 +440,7 @@ function depthTest(e) {
     //declr end------------------------
     var dend = new ScrollMagic.Scene({
       offset: 10500,
-      duration: 300
+      duration: 299
     })
     .setClassToggle('#dcend', 'border')
     .addTo(controller);
@@ -476,7 +467,7 @@ function depthTest(e) {
     //beg of end--------------------------------
     var bend = new ScrollMagic.Scene({
       offset: 10800,
-      duration: 500
+      duration: 599
     })
     .setClassToggle('#effects', 'border')
     .addTo(controller);
@@ -501,7 +492,7 @@ function depthTest(e) {
     //cleanup --------------------------------------
     var clean = new ScrollMagic.Scene({
       offset: 11300,
-      duration: 1200
+      duration: 1199
     })
     .setClassToggle('#cleanup', 'border')
     .addTo(controller);
@@ -523,32 +514,25 @@ function depthTest(e) {
     })
     .addTo(controller);
 
+    //delete battlefield
+    new ScrollMagic.Scene({
+      offset: 12500
+    })
+    .setClassToggle('#anatomyImg', 'hide')
+    .addTo(controller);
+
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 
   else {
 
-    console.log('big screen success'); //test for if statement running
+    console.log('big screen check 2'); //test for if statement running
 
       var untap = new ScrollMagic.Scene({
         offset: 380,
-        duration: 550
+        duration: 549
       })
       .setClassToggle('#untap', 'border')
 
@@ -575,7 +559,7 @@ function depthTest(e) {
       //upkeep----------------------------------------
       var upkeep = new ScrollMagic.Scene({
         offset: 930,
-        duration: 500
+        duration: 499
       })
       .setClassToggle('#upkeep', 'border')
       .addTo(controller);
@@ -600,7 +584,7 @@ function depthTest(e) {
       //draw-----------------------------------------
       var draw = new ScrollMagic.Scene({
         offset: 1430,
-        duration: 470
+        duration: 469
       })
       .setClassToggle('#draw', 'border')
       .addTo(controller);
@@ -625,7 +609,7 @@ function depthTest(e) {
       //declare-------------------------------------
       var dm1 = new ScrollMagic.Scene({
         offset: 1900,
-        duration: 250
+        duration: 249
       })
       .setClassToggle('#dm1', 'border')
       .addTo(controller);
@@ -651,7 +635,7 @@ function depthTest(e) {
 
       var main1 = new ScrollMagic.Scene({
         offset: 2250,
-        duration: 800
+        duration: 799
       })
       .setClassToggle('#divMain1', 'border')
       .addTo(controller);
@@ -677,7 +661,7 @@ function depthTest(e) {
 
       var dmc = new ScrollMagic.Scene({
         offset: 3050,
-        duration: 300
+        duration: 299
       })
       .setClassToggle('#dcombat', 'border')
       .addTo(controller);
@@ -704,7 +688,7 @@ function depthTest(e) {
       //beg--------------------------------------
       var begc = new ScrollMagic.Scene({
         offset: 3400,
-        duration: 500
+        duration: 499
       })
       .setClassToggle('#begCombat', 'border')
       .addTo(controller);
@@ -730,7 +714,7 @@ function depthTest(e) {
 
       var datk = new ScrollMagic.Scene({
         offset: 3900,
-        duration: 500
+        duration: 499
       })
       .setClassToggle('#declareAttacks', 'border')
       .addTo(controller);
@@ -756,7 +740,7 @@ function depthTest(e) {
 
       var dblk = new ScrollMagic.Scene({
         offset: 4400,
-        duration: 600
+        duration: 599
       })
       .setClassToggle('#declareBlocks', 'border')
       .addTo(controller);
@@ -782,7 +766,7 @@ function depthTest(e) {
 
       var dmg = new ScrollMagic.Scene({
         offset: 5000,
-        duration: 700
+        duration: 699
       })
       .setClassToggle('#resolveDmg', 'border')
       .addTo(controller);
@@ -808,7 +792,7 @@ function depthTest(e) {
 
       var endc = new ScrollMagic.Scene({
         offset: 5700,
-        duration: 500
+        duration: 499
       })
       .setClassToggle('#endCombat', 'border')
       .addTo(controller);
@@ -834,7 +818,7 @@ function depthTest(e) {
 
       var dm1 = new ScrollMagic.Scene({
         offset: 6200,
-        duration: 300
+        duration: 299
       })
       .setClassToggle('#dm2', 'border')
       .addTo(controller);
@@ -860,7 +844,7 @@ function depthTest(e) {
 
       var main2 = new ScrollMagic.Scene({
         offset: 6600,
-        duration: 600
+        duration: 599
       })
       .setClassToggle('#divMain2', 'border')
       .addTo(controller);
@@ -885,7 +869,7 @@ function depthTest(e) {
       //declr end------------------------
       var dend = new ScrollMagic.Scene({
         offset: 7200,
-        duration: 200
+        duration: 199
       })
       .setClassToggle('#dcend', 'border')
       .addTo(controller);
@@ -912,7 +896,7 @@ function depthTest(e) {
       //beg of end--------------------------------
       var bend = new ScrollMagic.Scene({
         offset: 7500,
-        duration: 300
+        duration: 299
       })
       .setClassToggle('#effects', 'border')
       .addTo(controller);
@@ -937,7 +921,7 @@ function depthTest(e) {
       //cleanup --------------------------------------
       var clean = new ScrollMagic.Scene({
         offset: 7800,
-        duration: 500
+        duration: 499
       })
       .setClassToggle('#cleanup', 'border')
       .addTo(controller);
@@ -952,49 +936,24 @@ function depthTest(e) {
       .addTo(controller);
       //second
       new ScrollMagic.Scene({
-        offset: 8400
+        offset: 8300
       })
       .on('start', function(){
         image.setAttribute('src', cleanupImg);
       })
       .addTo(controller);
 
+      //delete battlefield
+      new ScrollMagic.Scene({
+        offset: 8300
+      })
+      .setClassToggle('#anatomyImg', 'hide')
+      .addTo(controller);
+
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//.
+//Helpful documentation and examples:
+//http://scrollmagic.io/
+//https://github.com/janpaepke/ScrollMagic/wiki/Getting-Started-:-How-to-use-ScrollMagic
+//https://scrollmagic.io/docs/ScrollMagic.Scene.html#progress
