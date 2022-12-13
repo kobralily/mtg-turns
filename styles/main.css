@@ -2,6 +2,7 @@
 html {
   font-size: 100%;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 *{
   box-sizing: inherit;
@@ -12,13 +13,23 @@ html {
 body {
     display: flex;
     flex-direction: column;
+    align-items: center;
     font-family: 'Kalam', Times New Roman, sans-serif;
     color: #fff;
-    background: #000;
+    background: #5D3832;
     margin: 0;
     font-size: 1.9rem;
     width: 100%;
     line-height: 2.5rem;
+    overflow-x: hidden;
+}
+
+/* article stuff */
+article {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background: #5D3832;
 }
 
 /* header stuff */
@@ -44,6 +55,31 @@ h2 {
   font-size: 3rem;
 }
 
+/* tooltip stuff */
+.tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  width: 260px; /*FIX*/
+  background-color: #000;
+  padding: 0.03rem;
+  border-radius: 10px;
+
+  top: -40px;
+  left: -50%;
+}
+
+.hover-t:hover .tooltip-text {
+  visibility: visible;
+}
+
+.hover-t {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+
 
 
 
@@ -67,6 +103,7 @@ h2 {
   text-align: center;
   height: 485.18px;
   padding: 1rem;
+  padding-bottom: 0rem;
   line-height: 2rem;
 }
 #intro h2 {
@@ -79,6 +116,7 @@ h2 {
 #anatomyImg {
   grid-area: anatomyImg;
   width: 640px;
+  z-index: 10;
 }
 
 /* button stuff */
@@ -146,8 +184,12 @@ h2 {
 
 
 /*------main1 phase------*/
-#main1 {
+#divMain1Title {
   background: #5C427E;
+}
+
+#divMain1 {
+  background: #4A3D79;
 }
 
 /*------combat phase------*/
@@ -172,21 +214,25 @@ h2 {
 }
 
 /*------main2 phase------*/
-#main2 {
-  background: #508E93;
+#divMain2Title {
+  background: #7E8452;
+}
+#divMain2 {
+  background: #7D7744;
 }
 
 /*------end phase------*/
+
 #dend {
-  background: #4C8C54;
+  background: #7F693F;
 }
 
 #effects {
-  background: #828951;
+  background: #795841;
 }
 
 #cleanup {
-  background: #85734C;
+  background: #794C41;
 }
 
 /* --------end section stuff------- */
@@ -205,38 +251,6 @@ li {
 }
 
 
-/* article stuff */
-article {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  background: #505050;
-}
-
-
-/* tooltip stuff */
-.tooltip-text {
-  visibility: hidden;
-  position: absolute;
-  z-index: 1;
-  width: 260px; /*FIX*/
-  background-color: #000;
-  padding: 0.03rem;
-  border-radius: 10px;
-
-  top: -40px;
-  left: -50%;
-}
-
-.hover-t:hover .tooltip-text {
-  visibility: visible;
-}
-
-.hover-t {
-  position: relative;
-  display: inline-block;
-  text-align: center;
-}
 
 
 /*border*/
@@ -269,18 +283,21 @@ a:active {
   color: #E89BE6;
 }
 
+
+
+
+
+
+
+
+
 @media screen and (max-width: 1233px) {
 
   #text {
-    max-width: 800px;
-    margin: 0 auto 4rem auto;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(3, auto);
-    grid-template-areas:
-        "intro"
-        "anatomyImg"
-        "sections";
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100vw;
   }
 
   h1 {
@@ -296,26 +313,61 @@ a:active {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 1rem;
   }
 
   article {
     margin: auto;
   }
 
+  /*------beginning phase------*/
+  #beginning {
+    /* max-height: 2268px; */
+    max-width: 25ch;
+    margin: auto;
+  }
+
+  /*------main1 phase------*/
+  #main1 {
+    /* height: 1443px; */
+    max-width: 25ch;
+    margin: auto;
+  }
+
+  /*------combat phase------*/
+  #combat {
+    /* height: 3914px; */
+    max-width: 25ch;
+    margin: auto;
+  }
+
+  /*------main2 phase------*/
+  #main2 {
+    /* height: 1143px; */
+    max-width: 25ch;
+    margin: auto;
+  }
+
+  /*------end phase------*/
+  #end {
+    /* height: 1483px; */
+    max-width: 25ch;
+    margin: auto;
+  }
+
+  #beginning, #main1, #combat, #main2, #end {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #anatomyImg img{
+    max-width: 24rem;
+  }
 }
 
-@media screen and (max-width: 700px) {
+/* @media screen and (max-width: 1233px) {
 
   #text {
-    /*max-width: 500px;
-    margin: 0 auto 4rem auto;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(3, auto);
-    grid-template-areas:
-        "intro"
-        "anatomyImg"
-        "sections"; */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -337,7 +389,7 @@ a:active {
     font-size: 1.5rem;
   }
 
-  /* anatomy image stuff */
+
   #anatomyImg img{
     max-width: 24rem;
   }
@@ -345,6 +397,7 @@ a:active {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 
   article {
@@ -352,4 +405,11 @@ a:active {
     margin: auto;
   }
 
-}
+  #beginning, #main1, #combat, #main2, #end {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%
+  }
+
+} */
